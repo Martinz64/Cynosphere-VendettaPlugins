@@ -103,9 +103,9 @@ export const onLoad = () => {
       const insertPoint = findInReactTree(
         ret,
         (x) => x?.children?.[0]?.props?.actions
-      ).children;
+      )?.children;
 
-      insertPoint.splice(0, 0, <AvatarAction />);
+      if (insertPoint) insertPoint.splice(0, 0, <AvatarAction />);
     })
   );
 };
